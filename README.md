@@ -16,7 +16,8 @@
 - Header(logo and navbar) should be in StorePage and HomePage 
 - [ ] Decide whether CartPage is going to have Header or not later
 - Currently, both App comp and Header comp shares "/" path 
-- 
+
+3. Fetch shop items from API in `StorePage`
 ## Resources
 
 - [Fake store API](https://github.com/keikaavousi/fake-store-api)
