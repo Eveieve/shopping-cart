@@ -1,6 +1,6 @@
-import Header from "./Header";
+import Header from "./Header"
 
-function Home() {
+function HomePage() {
   return (
     <div>
       <Header />
@@ -8,4 +8,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
