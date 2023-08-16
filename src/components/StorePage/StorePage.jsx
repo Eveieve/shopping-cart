@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react';
 import Items from './Items';
 
-function StorePage() {
+
+const fetchData = () => {
   const [fetchedData, setFetchedData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,6 +19,12 @@ useEffect(() => {
   .catch((error) => setError(error))
   .finally(() => setLoading(false)); //when it's finally resolved! 
 }, [])
+
+return {fetchedData, error, loading}
+}
+
+function StorePage() {
+const{fetchedData, error, loading} = fetchData();
 
 if(error) return <p>A network error was encountered!</p>
 if (loading) return <>Loading...</>;
