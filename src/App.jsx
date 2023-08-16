@@ -1,20 +1,16 @@
-import { useState } from "react";
+import StorePage from "./components/StorePage";
+import { Link } from "react-router-dom";
 
-const App = () => {
-  const [heading, setHeading] = useState("Magnificent Monkeys");
-
-  const clickHandler = () => {
-    setHeading("Radical Rhinos");
-  };
-
+function App() {
   return (
     <>
-      <button type="button" onClick={clickHandler}>
-        Click Me
-      </button>
-      <h1>{heading}</h1>
+      <div>App page</div>
+
+      <Link to="store">store</Link>
+      <Link to="home">home</Link>
+      <Link to="cart">cart</Link>
     </>
   );
-};
+}
 
 export default App;
