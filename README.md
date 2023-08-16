@@ -9,6 +9,7 @@
 - Sketch out components i need - think about the static version first
 - Set up React router Links to each page(store, home, cart pages)
 - Will I need a navbar component? -> will add one later if i need one
+- 
 
 2. Add interactivity
 

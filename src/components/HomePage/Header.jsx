@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="flex ">
+    <div className="flex justify-between">
       <h1 className="text-3xl">Vintage shop</h1>
-      <input type="text" placeholder="Search.." />
-      <nav className="flex gap-2 flex-grow">
-        <Link to="/home">home</Link>
-        <Link to="/store">store</Link>
-        <Link to="/cart">cart</Link>
+      <nav className="flex gap-9">
+      <input type="text" placeholder="Search.." className="mx-10 p-2 w-25rem"/>
+
+        <Link to="/home">HOME</Link>
+        <Link to="/store">STORE</Link>
+        <Link to="/cart">CART</Link>
       </nav>
     </div>
   );
