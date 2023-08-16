@@ -1,14 +1,11 @@
-import StorePage from "./components/StorePage";
 import { Link } from "react-router-dom";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
     <>
-      <div>App page</div>
-
-      <Link to="store">store</Link>
-      <Link to="home">home</Link>
-      <Link to="cart">cart</Link>
+      <div>App page is a home page, this text is in App.jsx</div>
+      <HomePage />
     </>
   );
 }

@@ -1,9 +1,9 @@
 // contains site's logo, name, navigation bar , search bar
-
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <div>
-      <h1>Vintage shop</h1>
+      <h1 className="text-3xl">Vintage shop</h1>
       <input type="text" placeholder="Search.." />
       <nav>
         <Link to="home">home</Link>
@@ -13,3 +13,5 @@ function Header() {
     </div>
   );
 }
+
+export default Header;
