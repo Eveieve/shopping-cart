@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import HomePage from "./components/HomePage";
 
+// App.jsx just puts together components like HomePage and Footer etc
 function App() {
   return (
-    <div className = "p-5">
-      {/* <div>App page is a home page, this text is in App.jsx</div> */}
+    <div>
       <HomePage />
+      {/* Outlet renders children path */}
+      <Outlet />
     </div>
   );
 }
