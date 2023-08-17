@@ -7,7 +7,7 @@ import StorePage from "./components/StorePage";
 import CartPage from "./components/CartPage";
 import Header from "./components/HomePage/Header";
 import ProductPage from "./components/StorePage/ProductPage";
-import SingleItem from "./components/StorePage/SingleItem";
+// import SingleItem from "./components/StorePage/SingleItem";
 const router = createBrowserRouter([
   {
     path: "/",

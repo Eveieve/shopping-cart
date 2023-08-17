@@ -6,11 +6,11 @@ function SingleItem({ imageSrc, title, price, id, fetchedData }) {
 
   const routeParams = id;
 
-  const data = fetchedData;
+ 
 
   return (
       // <div className="border-4 rounded-md p-3 flex flex-col">
-      <Link data = {data} to = {`./${routeParams}`} className="border-4 rounded-md p-3 flex flex-col">
+      <Link to = {`./${routeParams}`} className="border-4 rounded-md p-3 flex flex-col">
         <img src={imageSrc} className = "h-4/6 m-auto" />
         <div className="flex p-5 justify-between">
           <p>{shortenedTitle}</p>
