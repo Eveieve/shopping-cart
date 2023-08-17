@@ -8,7 +8,6 @@ function ProductPage(props) {
 
   const {fetchedData : fetchedProduct, error, loading} = fetchData(routeParams);
 
-
   if(error) return <p>A network error was encountered!</p>
   if (loading) return <p>Loading...</p>;
 
