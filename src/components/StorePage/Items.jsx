@@ -5,8 +5,8 @@ console.log(fetchedData);
 
   const renderedItems = fetchedData.map((item) => (
     <SingleItem
-  title = {item.title}
-price = {item.price}
+      title = {item.title}
+      price = {item.price}
       fetchedData={fetchedData}
       id={item.id}
       key={item.id}

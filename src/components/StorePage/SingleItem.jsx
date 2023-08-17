@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function SingleItem({ imageSrc, title, price, id }) {
+function SingleItem({ imageSrc, title, price, id, fetchedData }) {
  
   const shortenedTitle = title.slice(0,20);
 
