@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import Items from './Items';
 
-
+// custom hook 'fetchData'
 const fetchData = () => {
   const [fetchedData, setFetchedData] = useState(null);
   const [error, setError] = useState(null);
