@@ -5,29 +5,22 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StorePage from "./components/StorePage";
 import CartPage from "./components/CartPage";
-import Header from "./components/Header";
 import ProductPage from "./components/StorePage/ProductPage";
 
 const router = createBrowserRouter([
+ 
   {
     path: "/",
     element: <App />,
-    
-  },
-  {
-    path: "/",
-    element: <Header />,
     children: [
       {
         path: "/store",
         element: <StorePage />,
       },
-      
       {
         path: "/store/:routeParams",
         element: <ProductPage/>,
       },
-     
       {
         path: "/cart",
         element: <CartPage />,

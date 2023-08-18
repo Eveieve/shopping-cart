@@ -5,8 +5,8 @@ function App() {
   return (
     <div>
       <Header />
-      {/* Outlet renders children path */}
       <Outlet />
+      {/* Footer component here  */}
     </div>
   );
 }
