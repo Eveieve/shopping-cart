@@ -1,5 +1,13 @@
+import { useContext } from "react";
+import { ShopContext } from "../../App";
+
 function CartPage() {
-  return <div ><p>CartPage</p><p>why is it rendering twice</p></div>;
+
+  const {fetchedData} = useContext(ShopContext);
+  
+  return <div >
+    <div>{fetchedData.length}</div>
+  </div>;
 }
 
 export default CartPage;

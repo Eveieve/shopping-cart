@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-//import fetchData from "../../fetchData";
 import { useContext } from 'react';
 import { ShopContext } from '../../App';
 
@@ -8,10 +7,8 @@ function ProductPage(props) {
   const {routeParams} = useParams();
   console.log(routeParams);
   const {fetchedData} = useContext(ShopContext);
-  // const {fetchedData : product, error, loading} = fetchData(routeParams);
-console.log(fetchedData);
-  // if(error) return <p>A network error was encountered!</p>
-  // if (loading) return <p>Loading...</p>;
+  
+  console.log(fetchedData);
 
   const product = fetchedData.find((item)=> item.id === routeParams)
   console.log(product);

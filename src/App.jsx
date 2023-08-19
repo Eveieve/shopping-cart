@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import { useState, useEffect, useContext , createContext} from "react";
-import ProductPage from "./components/StorePage/ProductPage";
+import { useState, useEffect, createContext} from "react";
+
 export const ShopContext = createContext({
-  fetchedData: [], 
-  cartItems: [],
+  cartItems: [], 
+  fetchedData:[],
 });
 
 function App() {
@@ -14,10 +14,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 const [cartItems, setCartItems] = useState([]);
 
-//   console.log(ShopContext)
-
-// const products = products;
-//   console.log(products); //null
 
   useEffect((routeParams = "") => {
   fetch(`https://fakestoreapi.com/products/${routeParams}`, {mode: "cors"})
@@ -33,22 +29,14 @@ const [cartItems, setCartItems] = useState([]);
   })
   .catch((error) => setError(error))
   .finally(() => setLoading(false)); //when it's finally resolved! 
-
-  
-  // const products = 
 }, [])
-console.log(fetchedData);
-// setCartItems(() => products);
+
 
   return (
-    // <div>
       <ShopContext.Provider value = {{cartItems, fetchedData}}>
       <Header />
       <Outlet />
-      {/* Footer component here  */}
-      {/* <ProductPage /> */}
       </ShopContext.Provider>
-    // </div>
   );
 }
 

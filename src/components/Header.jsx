@@ -3,20 +3,6 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ShopContext } from "../App";
 
-// function CartIcon() {
-
-//   console.log(cartItems);
-
-//   return (
-// <>
-// < Link to="/home">HOME</Link>
-//       <Link to="/store">STORE</Link>
-//       <Link to="/cart">CART</Link>
-//       <div class="cart-icon">hm</div>
-// </>
-//   )
-// }
-
 
 function Header() {
   const {cartItems} = useContext(ShopContext); // passing ShopContext object
