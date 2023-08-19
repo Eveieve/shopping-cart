@@ -6,7 +6,6 @@ function SingleItem({ imageSrc, title, price, id, fetchedData }) {
 
   const routeParams = id;
 
-
   return (
       <Link to = {`./${routeParams}`} className="border-4 rounded-md p-3 flex flex-col">
         <img src={imageSrc} className = "h-4/6 m-auto" />

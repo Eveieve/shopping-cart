@@ -10,7 +10,8 @@ function ProductPage(props) {
   
   console.log(fetchedData);
 
-  const product = fetchedData.find((item)=> item.id === routeParams)
+  const product = fetchedData.find((item)=> item.id == routeParams)
+  console.log(typeof routeParams);
   console.log(product);
 
   return (
