@@ -6,7 +6,7 @@ import { ShopContext } from "../App";
 
 function Header() {
   const {cartItems} = useContext(ShopContext); // passing ShopContext object
-console.log(cartItems);
+  
   return (
     <> 
     <div className="flex justify-between">

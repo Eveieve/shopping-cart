@@ -9,7 +9,6 @@ function ProductPage() {
   const {fetchedData, addToCart, cartItems} = useContext(ShopContext);
 
   const product = fetchedData.find((item)=> item.id == routeParams)
-
  
   return (
     <div className="flex items-center justify-center h-screen">

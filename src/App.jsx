@@ -16,11 +16,12 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
 
+
   const addToCart = (product) => {
-    setCartItems((prevItems)=>({
+    setCartItems((prevItems)=>[
       ...prevItems,
-      product
-    }))
+      product,
+    ])
   }
 
   useEffect((routeParams = "") => {
