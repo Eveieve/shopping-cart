@@ -5,6 +5,7 @@ import { useState, useEffect, createContext} from "react";
 export const ShopContext = createContext({
   cartItems: [], 
   fetchedData:[],
+  addToCart: ()=> {}
 });
 
 function App() {
@@ -14,6 +15,13 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
 
+
+  const addToCart = (product) => {
+    setCartItems((prevItems)=>({
+      ...prevItems,
+      product
+    }))
+  }
 
   useEffect((routeParams = "") => {
   fetch(`https://fakestoreapi.com/products/${routeParams}`, {mode: "cors"})
@@ -30,7 +38,7 @@ function App() {
 
 
   return (
-      <ShopContext.Provider value = {{cartItems, fetchedData}}>
+      <ShopContext.Provider value = {{cartItems, fetchedData, addToCart}}>
       <Header />
       <Outlet />
       </ShopContext.Provider>

@@ -3,9 +3,10 @@ import { ShopContext } from "../../App";
 
 function CartPage() {
 
-  const {fetchedData} = useContext(ShopContext);
-  
-  return <div >
+  const {fetchedData, cartItems} = useContext(ShopContext);
+  console.log(cartItems); // see if it's in there!
+
+  return <div>
     <div>{fetchedData.length}</div>
   </div>;
 }
