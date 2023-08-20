@@ -15,8 +15,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
 
-
-
   const addToCart = (product) => {
     setCartItems((prevItems)=>[
       ...prevItems,
