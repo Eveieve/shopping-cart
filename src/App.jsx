@@ -12,7 +12,7 @@ function App() {
   const [fetchedData, setFetchedData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
 
   useEffect((routeParams = "") => {
@@ -23,10 +23,7 @@ const [cartItems, setCartItems] = useState([]);
     }
     return res.json()
   })
-  .then((res) => {
-    setFetchedData(res)
-    console.log(res)
-  })
+  .then((res) => setFetchedData(res))
   .catch((error) => setError(error))
   .finally(() => setLoading(false)); //when it's finally resolved! 
 }, [])

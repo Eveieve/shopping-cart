@@ -2,17 +2,13 @@ import { useParams } from "react-router-dom";
 import { useContext } from 'react';
 import { ShopContext } from '../../App';
 
-function ProductPage(props) {
+function ProductPage() {
 
   const {routeParams} = useParams();
-  console.log(routeParams);
-  const {fetchedData} = useContext(ShopContext);
   
-  console.log(fetchedData);
+  const {fetchedData} = useContext(ShopContext);
 
   const product = fetchedData.find((item)=> item.id == routeParams)
-  console.log(typeof routeParams);
-  console.log(product);
 
   return (
     <div className="flex items-center justify-center h-screen">
@@ -23,7 +19,6 @@ function ProductPage(props) {
     </div>
     </div>
   )
-
 }
 
 export default ProductPage;

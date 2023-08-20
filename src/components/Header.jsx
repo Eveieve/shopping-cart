@@ -13,9 +13,9 @@ console.log(cartItems);
     <h1 className="text-3xl">Vintage shop</h1>
     <nav className="flex gap-9">
     <input type="text" placeholder="SEARCH" className="mx-10 p-2 border-solid border border-black"/>
-    < Link to="/home">HOME</Link>
-       <Link to="/store">STORE</Link>
-   <Link to="/cart">CART</Link>
+        < Link to="/home">HOME</Link>
+        <Link to="/store">STORE</Link>
+        <Link to="/cart">CART</Link>
      <div>{cartItems.length}</div>
     </nav>
   </div>

@@ -1,7 +1,6 @@
 import SingleItem from "./SingleItem";
 
 function Items({ fetchedData, }) {
-console.log(fetchedData);
 
   const renderedItems = fetchedData.map((item) => (
     <SingleItem
