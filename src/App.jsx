@@ -5,7 +5,11 @@ import { useState, useEffect, createContext} from "react";
 export const ShopContext = createContext({
   cartItems: [], 
   fetchedData:[],
-  addToCart: ()=> {}
+  addToCart: ()=> {},
+  howMany: 0,
+  handleIncrement: ()=> {}, 
+  handleDecrement: ()=> {},
+ 
 });
 
 function App() {
@@ -14,13 +18,23 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
+  const [howMany, setHowMany] = useState(0);
 
   const addToCart = (product) => {
     setCartItems((prevItems)=>[
       ...prevItems,
       product,
     ])
+    console.log(product);
+  }
+  
+  const handleIncrement = () => {
+    setHowMany((prev)=> prev+1);
+  }
 
+  const handleDecrement = () => {
+    if(howMany !== 0) 
+   setHowMany((prev)=> prev-1)
   }
 
   useEffect((routeParams = "") => {
@@ -38,7 +52,7 @@ function App() {
 
 
   return (
-      <ShopContext.Provider value = {{cartItems, fetchedData, addToCart}}>
+      <ShopContext.Provider value = {{cartItems, fetchedData, addToCart, howMany, handleIncrement, handleDecrement}}>
       <Header />
       <Outlet />
       </ShopContext.Provider>
