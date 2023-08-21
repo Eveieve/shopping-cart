@@ -1,14 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import { useState, useEffect, createContext} from "react";
+import MyCarousel from "./HomePage/MyCarousel";
 
 export const ShopContext = createContext({
   cartItems: [], 
   fetchedData:[],
   addToCart: ()=> {},
-  // quantity: 0,
-  // handleIncrement: ()=> {}, 
-  // handleDecrement: ()=> {},
  
 });
 
@@ -22,7 +20,6 @@ function App() {
   const addToCart = (product, quantity) => {
     setCartItems((prevItems)=>[
       ...prevItems,
-      // product, 
       {
         ...product, 
         quantity: quantity,
@@ -43,13 +40,14 @@ function App() {
   })
   .then((res) => setFetchedData(res))
   .catch((error) => setError(error))
-  .finally(() => setLoading(false)); //when it's finally resolved! 
+  .finally(() => setLoading(false));
 }, [])
 
 
   return (
       <ShopContext.Provider value = {{cartItems, fetchedData, addToCart}}>
       <Header />
+      <MyCarousel/>
       <Outlet />
       </ShopContext.Provider>
   );
