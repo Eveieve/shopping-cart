@@ -21,10 +21,7 @@ function App() {
       product,
     ])
 
-  
   }
-
-  
 
   useEffect((routeParams = "") => {
   fetch(`https://fakestoreapi.com/products/${routeParams}`, {mode: "cors"})
