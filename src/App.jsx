@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import { useState, useEffect, createContext} from "react";
-import MyCarousel from "./HomePage/MyCarousel";
 
 export const ShopContext = createContext({
   cartItems: [], 
@@ -26,7 +25,6 @@ function App() {
       }
      
     ])
-    console.log(cartItems);
   }
   
 
@@ -47,7 +45,6 @@ function App() {
   return (
       <ShopContext.Provider value = {{cartItems, fetchedData, addToCart}}>
       <Header />
-      <MyCarousel/>
       <Outlet />
       </ShopContext.Provider>
   );
