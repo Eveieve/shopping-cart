@@ -3,7 +3,7 @@ import { useState,useContext } from 'react';
 import { ShopContext } from '../../App';
 import AlertWithIcon from "../AlertWithIcon";
 import {Button} from 'flowbite-react'
-
+import Counter from './Counter'
 function ProductPage() {
 
   const {routeParams} = useParams();
@@ -29,6 +29,7 @@ function ProductPage() {
     <img src ={product.image} className="max-w-sm md:max-w-md"/>
     <p >${product.price}</p>
     <p >{product.description}</p>
+   <Counter/>
     <Button gradientDuoTone = "tealToLime" onClick = {()=>{addToCart(product); showAlert()}}>addToCart</Button>
     </div>
     </div>
