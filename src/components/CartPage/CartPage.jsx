@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ShopContext } from "../../App";
-
+import CartItem from "./CartItem";
 
 function CartPage() {
 
@@ -11,6 +11,8 @@ function CartPage() {
   const renderedItems = cartItems.map((item)=> {
     return <li>{item.title}</li>
   })
+
+ 
 
   return (
     <div>
@@ -26,7 +28,5 @@ function CartPage() {
     </div>
   ) 
 }
-
-
 
 export default CartPage;
