@@ -4,7 +4,7 @@ import { Button } from "flowbite-react";
 
 function CartPage() {
 
-  const { cartItems, howMany} = useContext(ShopContext);
+  const { cartItems, quantity} = useContext(ShopContext);
 
   console.log(cartItems)
 
@@ -12,7 +12,7 @@ function CartPage() {
     return <li>{item.title}</li>
   })
 
-  
+
   return (
     <div>
     <h1>Review your bag.</h1>

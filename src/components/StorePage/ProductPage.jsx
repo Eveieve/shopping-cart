@@ -12,17 +12,17 @@ function ProductPage() {
  
    const [isItemAdded, setIsItemAdded] = useState(false);
 
-  const [howMany, setHowMany] = useState(0);
+  const [quantity, setQuantity] = useState(0);
 
   const product = fetchedData.find((item)=> item.id == routeParams)
  
    const handleIncrement = () => {
-    setHowMany((prev)=> prev+1);
+    setQuantity((prev)=> prev+1);
   }
 
   const handleDecrement = () => {
-    if(howMany !== 0) 
-   setHowMany((prev)=> prev-1)
+    if(quantity !== 0) 
+   setQuantity((prev)=> prev-1)
   }
 
   function showAlert(){
@@ -39,8 +39,8 @@ function ProductPage() {
     <img src ={product.image} className="max-w-sm md:max-w-md"/>
     <p >${product.price}</p>
     <p >{product.description}</p>
-   <Counter howMany = {howMany} handleIncrement = {handleIncrement} handleDecrement={handleDecrement}/>
-    <Button gradientDuoTone = "tealToLime" onClick = {()=>{addToCart(product); showAlert()}}>addToCart</Button>
+   <Counter quantity = {quantity} handleIncrement = {handleIncrement} handleDecrement={handleDecrement}/>
+    <Button gradientDuoTone = "tealToLime" onClick = {()=>{addToCart(product, quantity); showAlert()}}>addToCart</Button>
     </div>
     </div>
     </>

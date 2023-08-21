@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Counter({howMany, handleIncrement, handleDecrement}) {
+function Counter({quantity, handleIncrement, handleDecrement}) {
 
 
   return (
@@ -11,7 +11,7 @@ function Counter({howMany, handleIncrement, handleDecrement}) {
     <button  className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
       <span onClick = {handleDecrement} className="m-auto text-2xl font-thin">−</span>
     </button>
-    <input type = "number" className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value={howMany}/>
+    <input type = "number" className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value={quantity}/>
   <button className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
     <span onClick = {handleIncrement} className="m-auto text-2xl font-thin">+</span>
   </button>

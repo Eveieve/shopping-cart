@@ -6,7 +6,7 @@ export const ShopContext = createContext({
   cartItems: [], 
   fetchedData:[],
   addToCart: ()=> {},
-  // howMany: 0,
+  // quantity: 0,
   // handleIncrement: ()=> {}, 
   // handleDecrement: ()=> {},
  
@@ -18,24 +18,20 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
-  // const [howMany, setHowMany] = useState(0);
 
-  const addToCart = (product) => {
+  const addToCart = (product, quantity) => {
     setCartItems((prevItems)=>[
       ...prevItems,
-      product,
+      // product, 
+      {
+        ...product, 
+        quantity: quantity,
+      }
+     
     ])
-    console.log(product);
+    console.log(cartItems);
   }
   
-  // const handleIncrement = () => {
-  //   setHowMany((prev)=> prev+1);
-  // }
-
-  // const handleDecrement = () => {
-  //   if(howMany !== 0) 
-  //  setHowMany((prev)=> prev-1)
-  // }
 
   useEffect((routeParams = "") => {
   fetch(`https://fakestoreapi.com/products/${routeParams}`, {mode: "cors"})
