@@ -6,9 +6,9 @@ export const ShopContext = createContext({
   cartItems: [], 
   fetchedData:[],
   addToCart: ()=> {},
-  howMany: 0,
-  handleIncrement: ()=> {}, 
-  handleDecrement: ()=> {},
+  // howMany: 0,
+  // handleIncrement: ()=> {}, 
+  // handleDecrement: ()=> {},
  
 });
 
@@ -18,7 +18,7 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
-  const [howMany, setHowMany] = useState(0);
+  // const [howMany, setHowMany] = useState(0);
 
   const addToCart = (product) => {
     setCartItems((prevItems)=>[
@@ -28,14 +28,14 @@ function App() {
     console.log(product);
   }
   
-  const handleIncrement = () => {
-    setHowMany((prev)=> prev+1);
-  }
+  // const handleIncrement = () => {
+  //   setHowMany((prev)=> prev+1);
+  // }
 
-  const handleDecrement = () => {
-    if(howMany !== 0) 
-   setHowMany((prev)=> prev-1)
-  }
+  // const handleDecrement = () => {
+  //   if(howMany !== 0) 
+  //  setHowMany((prev)=> prev-1)
+  // }
 
   useEffect((routeParams = "") => {
   fetch(`https://fakestoreapi.com/products/${routeParams}`, {mode: "cors"})
@@ -52,7 +52,7 @@ function App() {
 
 
   return (
-      <ShopContext.Provider value = {{cartItems, fetchedData, addToCart, howMany, handleIncrement, handleDecrement}}>
+      <ShopContext.Provider value = {{cartItems, fetchedData, addToCart}}>
       <Header />
       <Outlet />
       </ShopContext.Provider>

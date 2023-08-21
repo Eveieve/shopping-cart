@@ -8,14 +8,23 @@ function ProductPage() {
 
   const {routeParams} = useParams();
   
-  const {fetchedData, addToCart, cartItems, howMany, handleIncrement, handleDecrement} = useContext(ShopContext);
+  const {fetchedData, addToCart, cartItems,} = useContext(ShopContext);
  
    const [isItemAdded, setIsItemAdded] = useState(false);
 
+  const [howMany, setHowMany] = useState(0);
 
   const product = fetchedData.find((item)=> item.id == routeParams)
  
-  
+   const handleIncrement = () => {
+    setHowMany((prev)=> prev+1);
+  }
+
+  const handleDecrement = () => {
+    if(howMany !== 0) 
+   setHowMany((prev)=> prev-1)
+  }
+
   function showAlert(){
     setIsItemAdded(true);
     setTimeout(()=> setIsItemAdded(false), 1500)
