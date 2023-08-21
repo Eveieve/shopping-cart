@@ -12,8 +12,6 @@ function CartPage() {
     return <li>{item.title}</li>
   })
 
- 
-
   return (
     <div>
     <h1>Review your bag.</h1>

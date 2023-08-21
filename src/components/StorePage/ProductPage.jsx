@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState,useContext } from 'react';
 import { ShopContext } from '../../App';
-import { Button } from "flowbite-react";
 import AlertWithIcon from "../AlertWithIcon";
-
 function ProductPage() {
 
   const {routeParams} = useParams();
@@ -20,16 +18,20 @@ function ProductPage() {
     setTimeout(()=> setIsItemAdded(false), 1500)
   }
   
+  
   return (
+    <>
+       {isItemAdded && <AlertWithIcon />}
     <div className="flex items-center justify-center h-screen">
     <div className="flex items-center justify-center w-3/6">
     <img src ={product.image} className="max-w-sm md:max-w-md"/>
     <p >${product.price}</p>
     <p >{product.description}</p>
     <button onClick = {()=>{addToCart(product); showAlert()}}>addToCart</button>
-    {isItemAdded && <AlertWithIcon />}
     </div>
     </div>
+    </>
+   
   )
 }
 

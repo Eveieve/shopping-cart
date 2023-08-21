@@ -4,11 +4,12 @@ import { Alert } from 'flowbite-react';
 import { HiInformationCircle } from 'react-icons/hi';
 
 export default function AlertWithIcon() {
+
   return (
+    <span className = "animate-[ping_1.5s_ease-in-out]">
     <Alert
       color="success"
       icon={HiInformationCircle}
-      
     >
       <span>
         <p>
@@ -19,6 +20,7 @@ export default function AlertWithIcon() {
         </p>
       </span>
     </Alert>
+    </span>
   )
 }
 
